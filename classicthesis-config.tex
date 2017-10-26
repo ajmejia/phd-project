@@ -1,0 +1,400 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Classicthesis Typographic Thesis
+% Configuration File
+%
+% This file has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% André Miede (http://www.miede.de) with extensive commenting changes by:
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% GNU General Public License (v2)
+%
+% Important note:
+% The main lines to change in this file are in the DOCUMENT VARIABLES
+% section, the rest of the file is for advanced configuration.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	CHARACTER ENCODING
+%----------------------------------------------------------------------------------------
+
+\PassOptionsToPackage{utf8}{inputenc}
+\usepackage{inputenc}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT VARIABLES
+%	Fill in the lines below to enter your information into the thesis template
+%	Each of the commands can be cited anywhere in the thesis
+%----------------------------------------------------------------------------------------
+
+% Remove drafting to get rid of the '[ Date - classicthesis version 4.0 ]' text at the bottom of every page
+\PassOptionsToPackage{pdfspacing,subfig,beramono,eulerchapternumbers}{classicthesis}
+% Available options: drafting parts nochapters linedheaders eulerchapternumbers beramono eulermath
+% pdfspacing minionprospacing tocaligned dottedtoc manychapters listings floatperchapter subfig
+
+\newcommand{\myTitle}{El Contenido Estelar de las Galaxias a la Resolución de J-PAS\xspace}
+\newcommand{\mySubtitle}{Proyecto de candidatura para optar al título de Ph.D.}
+\newcommand{\myDegree}{Licenciado (Lic.)\xspace}
+\newcommand{\myName}{Alfredo J. Mejía\xspace}
+\newcommand{\myProf}{Put name here\xspace}
+\newcommand{\myOtherProf}{Put name here\xspace}
+\newcommand{\mySupervisor}{Gladis Magris\xspace}
+\newcommand{\myFaculty}{Facultad de Ciencias\xspace}
+\newcommand{\myDepartment}{Posgrado de Física Fundamental\xspace}
+\newcommand{\myUni}{Universidad de Los Andes\xspace}
+\newcommand{\myLocation}{Mérida, Venezuela\xspace}
+\newcommand{\myTime}{\today\xspace}
+\newcommand{\myVersion}{{\color{RedOrange} \textsc{Borrador 1.0}}\xspace}
+
+%----------------------------------------------------------------------------------------
+%	USEFUL COMMANDS
+%----------------------------------------------------------------------------------------
+
+\newcommand{\ie}{i.\,e.\xspace}
+\newcommand{\Ie}{I.\,e.\xspace}
+\newcommand{\eg}{e.\,g.\xspace}
+\newcommand{\Eg}{E.\,g.\xspace}
+\newcommand{\cf}{cf.\xspace}
+\newcommand{\Cf}{Cf.\xspace}
+\newcommand{\versus}{\emph{versus}\xspace}
+
+\newcommand{\note}[1]{{\color{OrangeRed}(#1)}\xspace}
+\newcommand{\mr}{\textsc{\note{referencia}}\xspace}
+
+\newcounter{dummy} % Necessary for correct hyperlinks (to index, bib, etc.)
+\providecommand{\mLyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+\newlength{\abcd} % for ab..z string length calculation
+
+\newcommand{\mlc}{\multicolumn}
+\newcommand{\mlr}{\multirow}
+
+\newcommand{\Hip}{\ensuremath{\mathbf{X}}\xspace}
+\newcommand{\hip}{\ensuremath{\mathbf{x}}\xspace}
+\newcommand{\hhi}{\ensuremath{\hat{\mathbf{x}}}\xspace}
+\newcommand{\dat}{\ensuremath{\{\mathcal{D}_i\}}\xspace}
+\newcommand{\pos}[2]{\ensuremath{\piup_N\left(#1\,\middle|\, #2\right)}\xspace}
+\newcommand{\pri}[1]{\ensuremath{\piup_0\left(#1\right)}\xspace}
+\newcommand{\lik}[3][]{\ensuremath{\mathcal{L}_{#1}\left(#2\,\middle|\, #3\right)}\xspace}
+\newcommand{\pro}[1]{\ensuremath{Pr\left(#1\right)}\xspace}
+
+\newcommand{\set}[1]{\ensuremath{\left\{#1\right\}}\xspace}
+\newcommand{\unit}[2][]{\ensuremath{#1\,\text{#2}}\xspace}
+\newcommand{\dynbas}{\textsc{DynBaS}\xspace}
+\newcommand{\tgaspex}{\textsc{tgaspex}\xspace}
+\newcommand{\gaspex}{\textsc{gaspex}}
+\newcommand{\starlight}{\textsc{starlight}\xspace}
+\newcommand{\tform}{\ensuremath{t_\text{form}}\xspace}
+\newcommand{\tburst}{\ensuremath{t_\text{brote}}\xspace}
+\newcommand{\tbex}{\ensuremath{t_\text{ext}}\xspace}
+\newcommand{\mcont}{\ensuremath{M_\text{cont}}\xspace}
+\newcommand{\mburst}{\ensuremath{M_\text{brote}}\xspace}
+\newcommand{\tcut}{\ensuremath{t_\text{trunc}}\xspace}
+\newcommand{\taucut}{\ensuremath{\tau_\text{trunc}}\xspace}
+\newcommand{\tauv}{\ensuremath{\tau_V}\xspace}
+\newcommand{\sn}{\ensuremath{S/N}\xspace}
+
+\newcommand{\Ni}[1]{\ensuremath{N_{#1}}\xspace}
+\newcommand{\Nt}[1]{\ensuremath{N_\text{#1}}\xspace}
+\newcommand{\sedi}[2][L]{\ensuremath{{#1}_\lambda^{#2}}\xspace}
+\newcommand{\sedt}[2][L]{\ensuremath{{#1}_\lambda^\text{#2}}\xspace}
+
+\newcommand{\chem}[2][H]{\ensuremath{\left[\text{#2}/\text{#1}\right]}\xspace}
+\newcommand{\mw}[1]{\ensuremath{\left<#1\right>_M}\xspace}
+\newcommand{\lw}[1]{\ensuremath{\left<#1\right>_L}\xspace}
+\newcommand{\xsun}[1]{\ensuremath{\text{#1}_\odot}}
+\newcommand{\up}[2][]{\ensuremath{\text{#1}^{#2}}}
+
+\newcommand{\logm}{\ensuremath{\log{M_\star/\xsun{M}}}\xspace}
+\newcommand{\mwla}{\ensuremath{\left<\log{t_\star/\text{año}}\right>_M}\xspace}
+\newcommand{\lwla}{\ensuremath{\left<\log{t_\star/\text{año}}\right>_L}\xspace}
+\newcommand{\mwlz}{\ensuremath{\left<\log{Z_\star/\xsun{Z}}\right>_M}\xspace}
+\newcommand{\lwlz}{\ensuremath{\left<\log{Z_\star/\xsun{Z}}\right>_L}\xspace}
+\newcommand{\extv}{\ensuremath{A_V}\xspace}
+
+\newcommand{\res}[1]{\ensuremath{\Delta#1}\xspace}
+\newcommand{\rlogm}{\ensuremath{\Delta\log{M_\star}}\xspace}
+\newcommand{\rmwla}{\ensuremath{\Delta\left<\log{t_\star}\right>_M}\xspace}
+\newcommand{\rlwla}{\ensuremath{\Delta\left<\log{t_\star}\right>_L}\xspace}
+\newcommand{\rmwlz}{\ensuremath{\Delta\left<\log{Z_\star}\right>_M}\xspace}
+\newcommand{\rlwlz}{\ensuremath{\Delta\left<\log{Z_\star}\right>_L}\xspace}
+\newcommand{\rextv}{\ensuremath{\Delta\extv}\xspace}
+
+\newcommand{\dis}[1]{\ensuremath{\delta#1}\xspace}
+\newcommand{\dlogm}{\ensuremath{\delta\log{M_\star}}\xspace}
+\newcommand{\dmwla}{\ensuremath{\delta\left<\log{t_\star}\right>_M}\xspace}
+\newcommand{\dlwla}{\ensuremath{\delta\left<\log{t_\star}\right>_L}\xspace}
+\newcommand{\dmwlz}{\ensuremath{\delta\left<\log{Z_\star}\right>_M}\xspace}
+\newcommand{\dlwlz}{\ensuremath{\delta\left<\log{Z_\star}\right>_L}\xspace}
+\newcommand{\dextv}{\ensuremath{\delta\extv}\xspace}
+
+\newcommand{\dig}[1]{\ensuremath{\delta_\text{G05}#1}\xspace}
+\newcommand{\glogm}{\ensuremath{\delta_\text{G05}\log{M_\star}}\xspace}
+\newcommand{\gmwla}{\ensuremath{\delta_\text{G05}\left<\log{t_\star}\right>_M}\xspace}
+\newcommand{\glwla}{\ensuremath{\delta_\text{G05}\left<\log{t_\star}\right>_L}\xspace}
+\newcommand{\gmwlz}{\ensuremath{\delta_\text{G05}\left<\log{Z_\star}\right>_M}\xspace}
+\newcommand{\glwlz}{\ensuremath{\delta_\text{G05}\left<\log{Z_\star}\right>_L}\xspace}
+\newcommand{\gextv}{\ensuremath{\delta_\text{G05}\extv}\xspace}
+
+\newcommand{\Oi}{\ensuremath{\left[\text{O\,\textsc{i}}\right]\lambda 6300}\xspace}
+\newcommand{\Oii}{\ensuremath{\left[\text{O\,\textsc{ii}}\right]\lambda\lambda 3726,3729}\xspace}
+\newcommand{\Oiii}{\ensuremath{\left[\text{O\,\textsc{iii}}\right]\lambda\lambda 4959,5007}\xspace}
+\newcommand{\Hei}{\ensuremath{\text{He\,\textsc{i}}\lambda 5876}\xspace}
+\newcommand{\Nei}{\ensuremath{\text{Ne\,\textsc{i}}}\xspace}
+\newcommand{\Nii}{\ensuremath{\left[\text{N\,\textsc{ii}}\right]\lambda\lambda 6548,6583}\xspace}
+\newcommand{\Sii}{\ensuremath{\left[\text{S\,\textsc{ii}}\right]\lambda\lambda 6717,6731}\xspace}
+\newcommand{\Caii}{\ensuremath{\text{Ca\,\textsc{ii}}}\xspace}
+
+\newcommand{\Dn}{\ensuremath{\text{D}4000}\xspace}
+\newcommand{\Ha}{\ensuremath{\text{H}\alpha}\xspace}
+\newcommand{\Hb}{\ensuremath{\text{H}\beta}\xspace}
+\newcommand{\Hg}{\ensuremath{\text{H}\gamma}\xspace}
+\newcommand{\Hdg}{\ensuremath{\text{H}\delta_A\!+\!\text{H}\gamma_A}\xspace}
+\newcommand{\MgFe}{\ensuremath{\left[\text{Mg}_2\text{Fe}\right]}\xspace}
+\newcommand{\MgbFe}{\ensuremath{\left[\text{MgFe}\right]'}\xspace}
+
+\newenvironment{changemargin}[2]{%
+\begin{list}{}{%
+  \setlength{\topsep}{0pt}%
+  \setlength{\leftmargin}{#1}%
+  \setlength{\rightmargin}{#2}%
+  \setlength{\listparindent}{\parindent}%
+  \setlength{\itemindent}{\parindent}%
+  \setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+
+%\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+%------------------------------------------------
+
+\usepackage{csquotes}
+\PassOptionsToPackage{%
+%backend=biber, % Instead of bibtex
+backend=bibtex8,bibencoding=ascii,%
+language=auto,%
+%style=numeric-comp,%
+style=authoryear-comp, % Author 1999, 2010
+bibstyle=authoryear,dashed=false, % dashed: substitute rep. author with ---
+sorting=nyt, % year, name, title
+maxnames=2,
+maxbibnames=10, % default: 3, et al.
+backref=false,%
+natbib=true, % natbib compatibility mode (\citep and \citet still work)
+url=false, %
+doi=false, %
+eprint=false %
+}{biblatex}
+\usepackage{biblatex}
+\defcitealias{Bruzual2003}{BC03}
+\defcitealias{Chen2012}{C12}
+\defcitealias{Gallazzi2005}{G05}
+\defcitealias{Magris2015}{M15}
+
+\newcommand{\bc}{\citetalias{Bruzual2003}\xspace}
+\newcommand{\bcxm}{\citetalias{Bruzual2003}xm\xspace}
+\newcommand{\chen}{\citetalias{Chen2012}\xspace}
+\newcommand{\gal}{\citetalias{Gallazzi2005}\xspace}
+\newcommand{\mgr}{\citetalias{Magris2015}\xspace}
+
+\newcommand{\stelib}{\textsc{stelib}\xspace}
+\newcommand{\miles}{\textsc{miles}\xspace}
+
+\newcommand{\defcitepalias}[1]{\mkbibparens{\citeauthor{#1}\nameyeardelim \bibhyperref[#1]{\citeyear{#1}}\postnotedelim en adelante \citetalias{#1}}\xspace}
+\newcommand{\defcitetalias}[1]{\citeauthor{#1} \mkbibparens{\bibhyperref[#1]{\citeyear{#1}}\postnotedelim en adelante \citetalias{#1}}\xspace}
+
+\DeclareUnicodeCharacter{2010}{-}
+
+%------------------------------------------------
+
+%\PassOptionsToPackage{ngerman,american}{babel}  % Change this to your language(s)
+% Spanish languages need extra options in order to work with this template
+\PassOptionsToPackage{es-tabla,spanish,es-lcroman,english}{babel}
+\usepackage{babel}
+
+ %------------------------------------------------
+
+\PassOptionsToPackage{fleqn}{amsmath} % Math environments and more by the AMS
+ \usepackage{amsmath}
+
+ %------------------------------------------------
+
+\PassOptionsToPackage{T1}{fontenc} % T2A for cyrillics
+\usepackage{fontenc}
+
+%------------------------------------------------
+
+\usepackage{textcomp} % Fix warning with missing font shapes
+
+%------------------------------------------------
+
+\usepackage{scrhack} % Fix warnings when using KOMA with listings package
+
+%------------------------------------------------
+
+\usepackage{xspace} % To get the spacing after macros right
+
+%------------------------------------------------
+
+\usepackage{mparhack} % To get marginpar right
+
+%------------------------------------------------
+
+\usepackage{marginnote} % For margin years
+\newcommand{\years}[1]{\marginnote{\small #1}} % New command for including margin years
+
+%------------------------------------------------
+
+%\usepackage{fixltx2e} % Fixes some LaTeX stuff
+
+%------------------------------------------------
+
+%\PassOptionsToPackage{smaller}{acronym} % Include printonlyused in the first bracket to only show acronyms used in the text
+\usepackage{acronym} % Nice macros for handling all acronyms in the thesis
+
+%\renewcommand*{\acsfont}[1]{\textssc{#1}} % For MinionPro
+\renewcommand*{\aclabelfont}[1]{\acsfont{#1}}
+
+%------------------------------------------------
+
+\PassOptionsToPackage{pdftex}{graphicx}
+\usepackage{graphicx}
+
+%----------------------------------------------------------------------------------------
+%	FLOATS: TABLES, FIGURES AND CAPTIONS SETUP
+%----------------------------------------------------------------------------------------
+
+\usepackage{multirow}
+\usepackage{tabularx} % Better tables
+\setlength{\extrarowheight}{3pt} % Increase table row height
+\newcommand{\tableheadline}[1]{\multicolumn{1}{c}{\spacedlowsmallcaps{#1}}}
+\newcommand{\myfloatalign}{\centering} % To be used with each float for alignment
+\usepackage{sidecap}
+\usepackage[scriptsize,bf,normal]{caption}
+\usepackage{subfig}
+
+\setlength{\belowcaptionskip}{10pt}
+%----------------------------------------------------------------------------------------
+%	CODE LISTINGS SETUP
+%----------------------------------------------------------------------------------------
+
+\usepackage{listings}
+\lccode`~=0
+%\lstset{emph={trueIndex,root},emphstyle=\color{BlueViolet}}%\underbar} % For special keywords
+\lstset{language=[LaTeX]Tex,%C++ % Specify the language(s) for listings here
+morekeywords={PassOptionsToPackage,selectlanguage},
+keywordstyle=\color{RoyalBlue}, % Add \bfseries for bold
+basicstyle=\small\ttfamily, % Makes listings a smaller font size and a different font
+%identifierstyle=\color{NavyBlue}, % Color of text inside brackets
+commentstyle=\color{lightgray}\ttfamily, % Color of comments
+stringstyle=\rmfamily, % Font type to use for strings
+numbers=left, % Change left to none to remove line numbers
+numberstyle=\scriptsize, % Font size of the line numbers
+stepnumber=5, % Increment of line numbers
+numbersep=8pt, % Distance of line numbers from code listing
+showstringspaces=false, % Sets whether spaces in strings should appear underlined
+breaklines=true, % Force the code to stay in the confines of the listing box
+%frameround=ftff, % Uncomment for rounded frame
+%frame=single, % Frame border - none/leftline/topline/bottomline/lines/single/shadowbox/L
+belowcaptionskip=.75\baselineskip % Space after the "Listing #: Desciption" text and the listing box
+}
+
+%----------------------------------------------------------------------------------------
+%	HYPERREFERENCES
+%----------------------------------------------------------------------------------------
+
+\PassOptionsToPackage{pdftex,hyperfootnotes=false,pdfpagelabels}{hyperref}
+\usepackage{hyperref}  % backref linktocpage pagebackref
+\pdfcompresslevel=9
+\pdfadjustspacing=1
+
+\hypersetup{
+% Uncomment the line below to remove all links (to references, figures, tables, etc), useful for b/w printouts
+%draft,
+colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
+% Uncomment the line below if you want to have black links (e.g. for printing black and white)
+%colorlinks=false, linktocpage=false, pdfborder={0 0 0}, pdfstartpage=3, pdfstartview=FitV,
+breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,%
+plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
+hypertexnames=true, pdfhighlight=/O,%nesting=true,%frenchlinks,%
+% urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=Maroon, %pagecolor=RoyalBlue,%
+urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,%
+%------------------------------------------------
+% PDF file meta-information
+pdftitle={\myTitle},
+pdfauthor={\textcopyright\ \myName, \myUni, \myFaculty},
+pdfsubject={},
+pdfkeywords={},
+pdfcreator={pdfLaTeX},
+pdfproducer={LaTeX with hyperref and classicthesis}
+%------------------------------------------------
+}
+
+%----------------------------------------------------------------------------------------
+%	AUTOREFERENCES SETUP
+%	Redefines how references in text are prefaced for different
+%	languages (e.g. "Section 1.2" or "section 1.2")
+%----------------------------------------------------------------------------------------
+
+\makeatletter
+\@ifpackageloaded{babel}
+{
+\addto\extrasamerican{
+\renewcommand*{\figureautorefname}{Figure}
+\renewcommand*{\tableautorefname}{Table}
+\renewcommand*{\partautorefname}{Part}
+\renewcommand*{\chapterautorefname}{Chapter}
+\renewcommand*{\sectionautorefname}{Section}
+\renewcommand*{\subsectionautorefname}{Section}
+\renewcommand*{\subsubsectionautorefname}{Section}
+}
+\addto\extrasngerman{
+\renewcommand*{\paragraphautorefname}{Absatz}
+\renewcommand*{\subparagraphautorefname}{Unterabsatz}
+\renewcommand*{\footnoteautorefname}{Fu\"snote}
+\renewcommand*{\FancyVerbLineautorefname}{Zeile}
+\renewcommand*{\theoremautorefname}{Theorem}
+\renewcommand*{\appendixautorefname}{Anhang}
+\renewcommand*{\equationautorefname}{Gleichung}
+\renewcommand*{\itemautorefname}{Punkt}
+}
+\addto\extrasspanish{
+\renewcommand*{\lstlistlistingname}{Índice de pseudo-códigos}
+}
+\providecommand{\subfigureautorefname}{\figureautorefname} % Fix to getting autorefs for subfigures right
+}{\relax}
+\makeatother
+
+%----------------------------------------------------------------------------------------
+
+\usepackage{classicthesis}
+
+%----------------------------------------------------------------------------------------
+%	CHANGING TEXT AREA
+%----------------------------------------------------------------------------------------
+
+\linespread{1.05} % a bit more for Palatino
+\areaset[current]{370pt}{760pt} % 686 (factor 2.2) + 33 head + 42 head \the\footskip
+%\setlength{\marginparwidth}{7em}%
+%\setlength{\marginparsep}{2em}%
+
+%----------------------------------------------------------------------------------------
+%	USING DIFFERENT FONTS
+%----------------------------------------------------------------------------------------
+
+%\usepackage[oldstylenums,notextcomp,lighttext]{kpfonts} % oldstyle notextcomp
+\usepackage[osf]{libertine}
+%\usepackage[light,condensed,math]{iwona}
+%\renewcommand{\sfdefault}{iwona}
+%\usepackage{lmodern} % <-- no osf support :-(
+%\usepackage{cfr-lm} %
+%\usepackage[urw-garamond]{mathdesign} %<-- no osf support :-(
+%\usepackage[default,osfigures]{opensans} % scale=0.95
+%\usepackage[sfdefault]{FiraSans}

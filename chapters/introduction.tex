@@ -1,0 +1,186 @@
+\chapter{Introducción}
+
+\label{ch:introduction}
+
+%----------------------------------------------------------------------------------------
+
+\section{El contexto}
+
+En el camino hacia la construcción de una teoría que explique la formación de las estructuras
+visibles en el Universo, las galaxias, que son los bloques fundamentales que conforman dicha
+estructura, se han convertido en el tópico de investigación más importante de la cosmología
+observacional. Aunque no existe una definición formal de lo que es una galaxia
+\citep[\eg][]{Forbes2011}, esta es generalmente descrita como un sistema gravitacionalmente ligado
+que resulta de la co-evolución dinámica de un halo de materia oscura y un conjunto de subestructuras
+de materia bariónica. Dicha materia bariónica coexiste en múltiples fases: gas ionizado, atómico y
+molecular, y en plasmas autogravitantes llamados estrellas. Aunque en esta definición clasifican la
+gran \emph{mayoría} de los objetos extragalácticos observados en el presente, la falta de una
+definición formal es mero reflejo de que una teoría que explique la existencia de \emph{todos} estos
+objetos está ausente. El camino tiene dos sentidos. Uno consiste en una construcción \emph{ab
+initio} para la formación y la evolución de las estructuras en el Universo a partir de las leyes
+fundamentales de la física y de un contexto cosmológico que dicte las escalas espaciales y
+temporales en las cuales los fenómenos físicos tienen lugar.
+
+El otro sentido, el cual será el recorrido en el presente estudio, consiste en interpretar los
+observables en las propiedades físicas de las galaxias observadas a distintas épocas cosmológicas.
+Para ello los sondeos proveen la información necesaria en la forma de mediciones de la radiación
+electromagnética que las galaxias emiten. En términos de las distintas componentes del contenido
+bariónico en una galaxia, la luminosidad \emph{emitida}, en la longitud de onda
+$\lambda=\lambda_\text{emi}$, en el instante $t_\text{emi}$, puede representarse simplemente como la
+suma:
+%
+\begin{equation}\label{ec:luminosidad-integrada}
+\sedt{emi}(Z;t_\text{emi}) = L_{\lambda,\star}(Z_\star;t_\text{emi}) +
+                             L_{\lambda,\text{MIE}^+}(Z_{\text{MIE}^+};t_\text{emi}) -
+                             L_{\lambda,\text{MIE}^-}(Z_{\text{MIE}^-};t_\text{emi}),
+\end{equation}
+%
+donde ${L_\lambda}_\star$ es luminosidad integrada de cada estrella, y $L_{\lambda,\text{MIE}^-}$ y
+$L_{\lambda,\text{MIE}^+}$ son la luminosidad absorbida/dispersada por parte del gas y del polvo
+fríos, y la re-emisión por parte del gas ionizado y del polvo caliente, respectivamente, en el Medio
+Interestelar (MIE). La luminosidad por supuesto depende de las propiedades físicas del medio en el
+que se originan y a través del cual viajan los fotones. De manera que esta se ha descrito en la
+Ec.~\eqref{ec:luminosidad-integrada} como función del contenido químico, usualmente parametrizado
+por la metalicidad (\ie, la fracción de especies químicas más pesadas que el hélio) en los
+interiores estelares, $Z_\star$, y de la metalicidad del MIE, $Z_\text{MIE}$; ambas a su vez
+funciones del tiempo.
+
+La cantidad que se mide en los observatorios no es la luminosidad en sí, sino el flujo, \ie la
+cantidad de energía radiada por unidad de tiempo por unidad de área, $\sedt[F]{obs}$, observado en
+un rango de longitudes de onda, $\lambda=\lambda_\text{obs}$. Este flujo es inevitablemente
+perturbado con incertidumbres inherentes al proceso de medición debidas a las limitaciones
+tecnológicas del instrumento, la técnica de medición y a las condiciones en que se realizó la misma.
+A estas fuentes de incertidumbre se les denominará $\epsilon_\text{med}$. Si la radiación
+electromagnética emitida es isotrópica, entonces la luminosidad en la
+Ec.~\eqref{ec:luminosidad-integrada} puede reescribirse en términos del flujo medido como:
+%
+\begin{equation}\label{ec:flujo-integrado}
+F_{\lambda_\text{obs}}^\text{obs}(Z;t_\text{emi}) = \frac{1}{1+z}\frac{L_{\lambda_\text{emi}}^\text{emi}(Z;t_\text{emi})}{4\pi D_L(z)^2} + \delta{F_{\lambda_\text{obs}}^\text{obs}}(\epsilon_\text{med}),
+\end{equation}
+%
+donde $D_L(z)$ es la distancia que recorre un fotón desde que escapa al Medio Intergaláctico (MIG)
+hasta que es observado por el detector (distancia luminosa) y
+$z\equiv\lambda_\text{obs}/\lambda_\text{emi}-1$ es el corrimiento al rojo cosmológico, \ie, el
+factor por el cual este se ha enlongado hacia el rojo en longitud de onda debido a la expansión del
+Universo, desde el instante de su emisión \citep{Hogg1999, Hogg2002}. Es el objetivo principal de la
+astronomía extragaláctica interpretar el conjunto de observaciones de galaxias individuales,
+$\set{\sedt[F]{obs}}$, provisto por los sondeos, en la Historia de Enriquecimiento Químico (HEQ),
+$\zeta(Z_0,t)$, y en la Historia de Formación Estelar (HFE), $\psi(Z;t)$, con el fin de avanzar en
+la construcción teórica que describa la formación y la evolución de las galaxias. Tal objetivo no es
+trivial, pues no solo las incertidumbres introducidas por $\epsilon_\text{med}$ intervienen, sino
+que los procesos físicos involucrados, los cuales ocurren en una gran variedad de escalas espaciales
+y temporales, suponen que la astronomía extragaláctica debe fundamentarse en los pilares de la
+física fundamental \citep[véase][para revisiones detalladas]{Somerville2015, Naab2017}.
+Consecuentemente, las incertidumbres inherentes a cada teoría y a cada supuesto, encapsuladas en
+$\epsilon_\text{teo}$, se propagarán durante el proceso de interpretación de $\set{\sedt[F]{obs}}$
+en las funciones $\zeta(Z_0,t)$ y $\psi(Z;t)$.
+
+Además de las fuentes de incertidumbres mencionadas en los párrafos anteriores, el problema de
+interpretar los observables en parámetros los físicos está condicionado por dos razones
+principalmente. En primer lugar está el hecho de que las observaciones solo proveen la función
+$F_{\lambda_\text{obs}}(Z;t)$ evaluada en $t_\text{emi}$ en la escala temporal de cada galaxia, por
+lo tanto la representación de las observaciones en el espacio de las funciones $\zeta(Z_0,t)$ y
+$\psi(Z;t)$ está probablemente degenerada, \ie existe un conjunto de funciones capaces de reproducir
+la misma observación. En segundo lugar está el hecho de que la evolución química ocurre de manera
+diferencial en el tiempo, lo que significa que no todas las especies más pesadas que el hélio están
+presentes en las mismas proporciones \citep[\eg,][]{Yates2013}, de manera que $Z$ y $t_\text{emi}$
+no solo son difíciles de medir, ambas están relacionadas de una forma \emph{a priori} desconocida.
+Así, los métodos o técnicas utilizados para llevar a cabo la interpretación de las observaciones
+$\set{F_{\lambda_\text{obs}}}$ en las funciones $\zeta(t)$ y $\psi(Z;t)$, necesariamente
+introducirán una serie de suposiciones y simplificaciones, las cuales se traducirán en una fuente de
+incertidumbre adicional. A esta se le denotará por $\epsilon_\text{met}$. Entonces, se puede
+describir cualquier variable física, $X_\text{recuperado}$ relacionada con las funciones
+$\zeta(Z_0,t)$ y $\psi(Z;t)$ y que resulte de la interpretación de las observaciones
+$\set{\sedt[F]{obs}}$, como:
+%
+\begin{equation}\label{ec:uncertainties}
+X_\text{recuperado} = X_\text{real} + \delta{X}(\epsilon_\text{teo},\epsilon_\text{obs},\epsilon_\text{met}),
+\end{equation}
+%
+donde $X_\text{real}$ es el valor intrínseco real de la propiedad que se quiere determinar.
+
+\section{El problema}
+
+En los párrafos anteriores se ha descrito el problema principal de la astronomía extragaláctica, en
+el cual está enmarcado el presente estudio, en términos de las incertidumbres que se originan en las
+teorías relevantes (\eg, la teoría de formación de estructuras, la teoría del transporte radiativo,
+las teorías de formación y de evolución estelar, etc.), las incertidumbres inherentes al proceso de
+medición y las que tienen origen en el método de interpretación. En esta sección se delimitará la
+contribución que hará el presente estudio para resolver dicho problema.
+
+\subsection{Sobre los sondeos de galaxias}
+
+El producto de los sondeos que será relevante en este estudio es el conjunto de medidas
+$\set{\sedt[F]{obs}}$ de galaxias individuales. Se limitará el presente estudio a sondeos de
+galaxias en el rango espectral óptico, los cuales además proporcionan una plétora de información
+disponible públicamente \citep[\eg,][]{Wolf2003, Moles2008, Abazajian2009}. Esto se traducirá en una
+minimización el impacto de las incertidumbres introducidas por los ingredientes teóricos
+($\epsilon_\text{teo}$), cuyas predicciones son inciertas más allá del rango óptico del espectro.
+
+Aún con la restricción anterior, existen muchas formas en que $X_\text{recuperado}$ puede ser
+perturbado a través de $\set{\sedt{obs}}$, sin embargo, este estudio se enfocará en la contribución
+de la resolución espectral a dichas perturbaciones, debido a que es un parámetro altamente variable
+de un sondeo a otro ($\Delta\lambda\sim1\,$---$\,\unit[1000]{\AA}$) y a que este puede limitar
+críticamente la recuperabilidad de propiedades físicas fundamentales como la edad estelar y la
+metalicidad \citep[\eg,][]{MacArthur2010, Pforr2012, Mitchell2013}. En ese sentido, se han escogido
+tres resoluciones representativas de los sondeos de galaxias en el rango óptico: espectroscopía de
+alta resolución ($\Delta\lambda\sim\unit[1]{\AA}$) y, fotometría de banda angosta
+($\Delta\lambda\sim\unit[100]{\AA}$) y de banda ancha ($\Delta\lambda\sim\unit[1000]{\AA}$). En el
+siguiente capítulo se darán los detalles de los sondeos escogidos y de las características de
+$\set{\sedt[F]{obs}}$.
+
+\subsection{Sobre la síntesis espectral}
+
+El método de interpretación más implementado en la literatura es el de síntesis espectral
+\citep[pero véase \eg,][]{Chen2012}, pues ha sido diseñado especialmente para explorar el poder
+estadístico provisto por los sondeos de galaxias, para muestrear el espacio de funciones
+$\zeta(Z_0,t)$ y $\psi(Z;t)$ \citep[\eg,][]{Heavens2000, Kauffmann2003}. En la síntesis espectral el
+conjunto de medidas para una galaxia observada, $\set{\sedt[F]{obs}}$, es comparado con la
+predicción de los ingredientes físicos combinados en un modelo plausible. Así, las distintas fuentes
+de incertidumbres descritas en los párrafos anteriores se convolucionan durante el proceso de
+interpretación de una forma que no es trivial predecir, pues no todas las incertidumbres son
+conocidas de antemano. En particular, durante este proceso, el modelo asumido por el método de
+síntesis espectral para describir las funciones $\zeta(Z_0,t)$ y $\psi(Z;t)$, propaga las
+incertidumbres encapsuladas en $\epsilon_\text{met}$. En este trabajo se implementará el método de
+síntesis espectral no paramétrico, que tradicionalmente ha requerido conjuntos $\set{\sedt[F]{obs}}$
+del orden de $N_\text{obs}\sim1000$ (véase el siguiente capítulo para más detalles), para demostrar
+su aplicabilidad a sondeos fotométricos de galaxias, que tradicionalmente proporcionan conjuntos
+$N_\text{obs}\sim10$. Aunque en el modelo propuesto captura los fenómenos físicos no lineales
+representados en la Ec.~\eqref{ec:flujo-integrado} por las contribuciones del MIE (segundo y tercer
+término del lado derecho de la igualdad), el enfoque principal en este estudio será el contenido
+estelar de las galaxias, de manera que las escalas temporales relevantes serán la escala de
+formación estelar y la de evolución estelar.
+
+\section{El objetivo}
+
+El principal objeto de este estudio es demostrar que el contenido estelar codificado en la DEE de
+una galaxia no resuelta, puede extraerse a partir de observaciones fotométricas utilizando el método
+de la síntesis espectral no paramétrico. Para esto se desarrollará un análisis sobre la propagación
+de las incertidumbres durante la interpretación de $\set{F_{\lambda_\text{obs}}}$ en las funciones
+$\zeta(Z_0,t)$ y $\psi(Z;t)$, haciendo énfasis en el comportamiento estadístico de las fuentes de
+incertidumbre combinadas $\epsilon_\text{obs} \otimes \epsilon_\text{teo} \otimes
+\epsilon_\text{met}$, como función de la resolución espectral.
+
+\subsection{Los objetivos específicos}
+
+\paragraph{Definir las muestras.} Se seleccionarán dos muestras de galaxias. La primera será una
+muestra de galaxias sintéticas con ``medidas'' en tres resoluciones espectrales representativas de
+espectroscopía de alta resolución, fotometría de banda ancha y fotometría de banda angosta, todas en
+el rango óptico del  espectro. La segunda muestra será una observada usando la técnica de la
+espectroscopía de alta resolución.
+
+\paragraph{Realizar pruebas de consistencia \emph{interna}.} La muestra sintética a las distintas
+resoluciones será utilizada para evaluar las incertidumbres propagadas durante la interpretación de
+las observaciones en la forma de un diagnóstico \emph{interno}, donde $X_\text{real}$ es conocido de
+antemano.
+
+\paragraph{Realizar pruebas de consistencia \emph{externa}.} La fotometría tradicional (de banda
+media/ancha) proporciona poca información sobre la metalicidad debido a que los rasgos espectrales
+trazadores de esta propiedad son generalmente de unas decenas de \AA. Por esta razón se ha planteado
+en este trabajo evaluar la recuperabilidad de la metalicidad estelar a partir de observaciones
+fotométricas de banda angosta, en el marco del \emph{Javalambre Physics of the Accelerating Universe
+Astrophysical Survey} (J-PAS). Para esto, la muestra real se utilizará para realizar un diagnóstico
+\emph{externo} comparando los resultados del presente estudio con los presentados por otros autores.
+
+El método realizar la interpretación, los detalles de las muestras de datos simulados y observados,
+y los procedimientos estadísticos para el análisis de los resultados se describen a continuación.
