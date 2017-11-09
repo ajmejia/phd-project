@@ -3,7 +3,7 @@
 \label{ch:samples-procedure}
 
 En este capítulo se describen las muestras simulada y observada, el método de interpretación de
-$\set{\sedt{obs}}$ y los procedimientos para el análisis de los resultados.
+$\set{\sedt[F]{obs}}$ y los procedimientos para el análisis de los resultados.
 
 %----------------------------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ $\set{\sedt{obs}}$ y los procedimientos para el análisis de los resultados.
 
 Ya que la resolución espectral de las observaciones es una cantidad que varía de un sondeo a otro,
 es un parámetro sensible para evaluar del contenido estelar que se puede extraer de los sondeos de
-galaxias como función de este. En ese sentido se ha planteado hacer dicha evaluación a tres
+galaxias como función de éste. En ese sentido se ha planteado hacer dicha evaluación a tres
 resoluciones espectrales distintas: fotometría de banda ancha, de banda angosta y espectroscopía de
 alta resolución. Para contextualizar el análisis en el marco de sondeos reales se han escogido el
 \emph{Sloan Digital Sky Survey} \citep[SDSS,][]{York2000}, que proporcionará la información para
@@ -19,9 +19,9 @@ construir las muestras espectroscópica \citep{Strauss2002} y fotométrica de ba
 \citep{Gunn1998} y, el \emph{Javalambre Physics of the Accelerating Universe Astrophysical Survey}
 \citep[J-PAS,][]{Benitez2014,Dupke2015} que proporcionará la información para construir la muestra
 fotométrica de banda angosta. Este último sondeo será de particular interés a lo largo de este
-trabajo puesto que promete superar sondeos la información provista en el sentido de la abundancia
-química estelar en las galaxias, un parámetro físico que ha permanecido elusivo hasta ahora en
-sondeos fotométricos tradicionales \citep[aún así véase,][]{MacArthur2010}.
+trabajo puesto que promete superar la información provista por otros sondeos en la recuperación de
+la abundancia química estelar en las galaxias, un parámetro físico que ha permanecido elusivo hasta
+ahora en sondeos fotométricos tradicionales \citep[aún así véase,][]{MacArthur2010}.
 
 \subsection{La muestra simulada}\label{sc:mock-sample}
 
@@ -39,14 +39,14 @@ terrestre también se muestran.}
 \label{fig:sigma-spectrum}
 \end{SCfigure}
 
-\citet{Chen2012} introdujo una receta para simular observaciones de galaxias usando un método de
+\citet{Chen2012} introdujeron una receta para simular observaciones de galaxias usando un método de
 Monte Carlo para muestrear el espacio de parámetros de funciones las $\zeta(Z_0,t)$ y $\psi(Z;t)$
-previamente definidas por los autores. \citet{Magris2015} implementó esta receta en una biblioteca
-llamada \emph{Synthetic Spectral Atlas of Galaxies} (SSAG) para probar varias implementaciones del
-método de la síntesis espectral. En el presente trabajo se utilizará la misma muestra de $134$ HFEs
-usadas en \citet{Magris2015}.
+previamente definidas por los autores. \citet{Magris2015} implementaron esta receta en una
+biblioteca llamada \emph{Synthetic Spectral Atlas of Galaxies} (SSAG) para probar varias
+implementaciones del método de la síntesis espectral. En el presente trabajo se utilizará la misma
+muestra de $134$ HFEs usadas en \citet{Magris2015}.
 
-Los espectros de la SSAG, por construcción, tienen una resolución $\Delta\lambda=\unit[3]{\AA}$.
+Los espectros de la SSAG, por construcción, tienen una resolución $\Delta\lambda=\unit[1]{\AA}$.
 Entonces, a partir de estos espectros se sintetizarán la espectroscopía del SDSS caracterizada por
 una Resolución Alta \citep[RA: $\Delta\lambda=1\,\text{\AA}$][]{Strauss2002}, y la fotometría del
 J-PAS de Resolución Media \citep[RM: $\Delta\lambda=140\,\text{\AA}$][]{Marin-Franch2015} y la
@@ -57,21 +57,21 @@ usando la integral del flujo esperado en la $k$-ésima banda espectral:
 F_k = \left.\int T_k(\lambda)\,f_\lambda\,\text{d}\lambda\middle/\int T_k(\lambda)\,\text{d}\lambda\right.,
 \end{equation}
 %
-donde las funciones de respuesta, $T_k(\lambda)$, de ambos sistemas fotométricos son como se
-muestran en la Fig.~\ref{fig:sigma-spectrum}. Aunque la SSAG por sí misma no proporciona
-distribuciones de índices espectrales realistas, pues los fenómenos físicos que regulan el contenido
-estelar no entran en la simulación, la muestra sintética se ha escogido de manera que la bimodalidad
-en las distribuciones de propiedades observacionales como el color y el \emph{break} de
+donde las funciones de respuesta, $T_k(\lambda)$, de ambos sistemas fotométricos son como se muestra
+en la Fig.~\ref{fig:sigma-spectrum}. Aunque la SSAG por sí misma no proporciona distribuciones de
+índices espectrales realistas, pues los fenómenos físicos que regulan el contenido estelar no entran
+en la simulación, la muestra sintética se ha escogido de manera que la bimodalidad en las
+distribuciones de propiedades observacionales como el color y la discontinuidad de
 $\unit[4000]{\AA}$ estén presentes como en sondeos reales \citep{Strateva2001, Kauffmann2003,
 Baldry2004}.
 
 Para simular datos espectrales realistas a las distintas resoluciones espectrales, se procederá como
 sigue: \textit{(i)} se añadirá ruido Gaussiano aleatoriamente al flujo en cada elemento de
-resolución asumiendo ruido anticorrelado observacionalmente plausible. Para esto se construye una
-función $\Gamma_\lambda$ tal que esta es el promedio de los errores reportados por el SDSS en la
-espectroscopía de galaxias hasta $z=0.1$, normalizado a la unidad en la longitud de onda efectiva de
-la banda $r'$ \citep{Magris2015}. Dicha función será luego suavizada y degradada en resolución para
-ajustarse a las distintas resoluciones espectrales estudiadas en este trabajo. En la
+resolución asumiendo ruido no correlado, lo cual es observacionalmente plausible. Para esto se
+construye una función $\Gamma_\lambda$ tal que ésta es el promedio de los errores reportados por el
+SDSS en la espectroscopía de galaxias hasta $z=0.1$, normalizado a la unidad en la longitud de onda
+efectiva de la banda $r'$ \citep{Magris2015}. Dicha función será luego suavizada y degradada en
+resolución para ajustarse a las distintas resoluciones espectrales estudiadas en este trabajo. En la
 Fig.~\ref{fig:sigma-spectrum} se muestran las curvas $\Gamma_\lambda$ resultantes. En este sentido,
 el espectro ``observado'' resultante será simplemente:
 %
@@ -80,20 +80,20 @@ el espectro ``observado'' resultante será simplemente:
 \end{equation}
 %
 donde $\mathcal{N}(\mu,\sigma_\lambda)$ representa una realización aleatoria de una distribución
-Gaussiana con promedio $\mu=0$ y $\sigma_\lambda=\Gamma_\lambda F_\lambda/(S/N)_r$ la desviación
-estándar en cada elemento de resolución espectral. Para tomar en consideración el hecho de que la
-relación señal a ruido es $S/N\propto
-\left.\sedt[F]{obs}\middle/\sqrt{\sedt[F]{obs}+\sigma_\text{ins}}\right.$, donde
-$\sigma_\text{ins}$ es la desviación estándar del ruido introducido por el instrumento, se adoptará
-distintos valores de esta en la banda $r'$, $(S/N)_r=20$, $45$ y $140$ para los datos a RA, RM y RB,
-respectivamente. Nótese que estos valores son consistentes con las expectativas para sondeos reales
-de galaxias en el Universo local \citep{Benitez2014, Howell2006}. Para tomar en consideración las
-variaciones estadísticas de los parámetros físicos recuperados como función del ruido observacional,
-el procedimiento de añadir el ruido aleatorio se repetirá $20$ veces para cada espectro en la
-muestra de $134$ galaxias, de manera que la muestra final comprenderá $2680$ espectros en tres
-resoluciones espectrales, representativos de las observaciones reales en el Universo local. El
-resultado de una de las realizaciones de ruido se muestra en una proyección del espacio de colores
-del SDSS en la Fig.~\ref{fig:samples} en azul oscuro.
+Gaussiana con promedio $\mu=0$ y desviación estándar $\sigma_\lambda=\Gamma_\lambda
+F_\lambda/(S/N)_r$ en cada elemento de resolución espectral. Para tomar en consideración el hecho de
+que la relación señal a ruido es $S/N\propto
+\left.\sedt[F]{obs}\middle/\sqrt{\sedt[F]{obs}+\sigma_\text{ins}}\right.$, donde $\sigma_\text{ins}$
+es la desviación estándar del ruido introducido por el instrumento, se adoptará distintos valores de
+ésta en la banda $r'$, $(S/N)_r=20$, $45$ y $140$ para los datos a RA, RM y RB, respectivamente.
+Nótese que estos valores son consistentes con las expectativas para sondeos reales de galaxias en el
+Universo local \citep{Benitez2014, Howell2006}. Para tomar en consideración las variaciones
+estadísticas de los parámetros físicos recuperados como función del ruido observacional, el
+procedimiento de añadir el ruido aleatorio se repetirá $20$ veces para cada espectro en la muestra
+de $134$ galaxias, de manera que la muestra final comprenderá $2680$ espectros en tres resoluciones
+espectrales, representativos de las observaciones reales en el Universo local. El resultado de una
+de las realizaciones de ruido se muestra en una proyección del espacio de colores del SDSS en la
+Fig.~\ref{fig:samples} en azul oscuro.
 
 Es importante notar que el número de realizaciones que se adoptará es completamente arbitrario y
 representa un compromiso entre un tiempo de cómputo razonable y resultados estadísticamente
@@ -258,25 +258,25 @@ componentes, dependerá de las peculiaridades de $\sedt[F]{obs}$.
 
 Claramente \dynbas no está diseñado para recuperar la HFE en su máxima resolución temporal, sino
 para hacer estimaciones robustas de las propiedades físicas globales, basadas en los rasgos más
-importantes en la HFE de la galaxia problema. La implementación actual de \dynbas es feasible para
+importantes en la HFE de la galaxia problema. La implementación actual de \dynbas es factible para
 la extracción del contenido estelar a partir de la DEE integrada de poblaciones estelares con HFE
 relativamente simple \citep{Cabrera-Ziri2016}. A escalas extragalácticas la premisa se mantiene
-\citep[\eg,][]{Diaz2015, Mejia-Narvaez2017}. \citet{Diaz2015} presentó una implementación del método
-no paramétrico llamada \textsc{muffit} en la que se seleccionan dinámicamente dos PES que en
+\citep[\eg,][]{Diaz2015, Mejia-Narvaez2017}. \citet{Diaz2015} presentaron una implementación del
+método no paramétrico llamada \textsc{muffit} en la que se seleccionan dinámicamente dos PES que en
 combinación lineal son capaces de reproducir los rasgos espectrales más relevantes de las galaxias
 de la secuencia roja (dominadas por poblaciones estelares viejas y ricas en metales evolucionando
 pasivamente) a la resolución de la fotometría de ALHAMBRA \citep{Moles2008}. Independientemente,
 usando simulaciones de observaciones espectroscópicas de galaxias con $S/N=20$, \citet{Magris2015}
-comparó el desempeño de \dynbas frente a otros algoritmos de base fija y encontró que este recupera
-las propiedades físicas globales con una exactitud y precisión comparable con los resultados de
-implementaciones que efectivamente buscan extraer la HFE (\eg, \starlight). Estos resultados
-sugieren que las galaxias que resultan de HFE complejas pueden efectivamente ser descritas por una
-combinación de las contribuciones espectrales de una población joven, intermedia y una vieja
-\citep{CidFernandes2005}.
+compararon el desempeño de \dynbas frente a otros algoritmos de base fija y encontró que éste
+recupera las propiedades físicas globales con una exactitud y precisión comparable con los
+resultados de implementaciones que efectivamente buscan extraer la HFE (\eg, \starlight). Estos
+resultados sugieren que las galaxias que resultan de HFE complejas pueden efectivamente ser
+descritas por una combinación de las contribuciones espectrales de una población joven, intermedia y
+una vieja \citep{CidFernandes2005}.
 
 %----------------------------------------------------------------------------------------
 
-\section{Los ingradientes y los parámetros físicos}
+\section{Los ingredientes y los parámetros físicos}
 
 En este estudio se adoptará una versión actualizada de los modelos de síntesis de poblaciones
 estelares de \defcitetalias{Bruzual2003}, basada en las trayectorias evolutivas de Padova 1994
@@ -317,11 +317,11 @@ modelo de extinción en dos fases de \citet{Charlot2000} intenta capturar esta f
 manera: en la primera fase ($t_\star\leq\unit[10^7]{años}$) las estrellas se encuentran embebidas en
 la nube molecular en que se formaron, la cual está caracterizada por una profundidad óptica $\tauv$
 y, en la segunda fase ($t_\star>\unit[10^7]{años}$), solo una fracción $\mu$ de la profundidad
-óptica original contribuye a la extinción en el MIE debido a la disociasión de la nube molecular.
+óptica original contribuye a la extinción en el MIE debido a la disociación de la nube molecular.
 Así, el modelo de polvo en la muestra simulada estará caracterizado por dos curvas de extinción
 [$S(\tauv)$ y $S(\mu\tauv)$], mientras que la muestra observada estará probablemente caracterizada
 por fenómenos más complejos que los descritos por el modelo de \citet{Charlot2000}.
-\citet{Tojeiro2007} demostró que debido a las degeneraciones intrínsecas del problema de síntesis
+\citet{Tojeiro2007} demostraron que debido a las degeneraciones intrínsecas del problema de síntesis
 espectral, no es posible recuperar ambos parámetros del polvo ($\tauv$ y $\mu$) de manera
 simultánea. Por esta razón, en este estudio se buscará la recuperación de la extinción
 \emph{efectiva}, que en el caso de las galaxias de la muestra sintética sería equivalente a estimar
@@ -421,20 +421,20 @@ mediante el ajuste, \ie,
 \end{equation}
 
 La distribución de los residuos de la muestra sintética será caracterizada por la
-mediana($\res{x}$), para estimar el \emph{sesgo} respecto del valor real, y con el semi-rango
+mediana($\res{x}$), para estimar el \emph{sesgo} respecto del valor real, y por el semi-rango
 percentil $16\,$---$\,84$vo, para estimar la \emph{precisión} del valor estimado, siendo ambos
 medidas la incertidumbre sistemática y aleatoria en los parámetros físicos estimados,
 respectivamente. Nótese que de acuerdo con la definición de precisión anterior, valores crecientes
 son característicos de resultados menos precisos. Es importante notar además que estas estadísticas
 representan límites inferiores para las incertidumbres, dado que los resultados de la síntesis
 espectral usando observaciones reales son propensos a propagar más incertidumbres que por
-simplicidad serán sido ignoradas durante las PTT, \eg, diferencias entre los ingredientes asumidos
-en el análisis espectral y los presentes en galaxias reales; la forma y universalidad de la FIM
-asumidas a lo largo de este trabajo; errores instrumentales (además del ruido Gaussiano considerado)
-y de calibración \citep[véase][para una revisión más detallada]{Conroy2009, Conroy2010a}.
+simplicidad serán ignoradas durante las PTT, \eg, diferencias entre los ingredientes asumidos en el
+análisis espectral y los presentes en galaxias reales; la forma y universalidad de la FIM asumidas a
+lo largo de este trabajo; errores instrumentales (además del ruido Gaussiano considerado) y de
+calibración \citep[véase][para una revisión más detallada]{Conroy2009, Conroy2010a}.
 
 Además de cuantificar los sistemáticos de los residuos individuales, se estudiará las posibles
-correlaciones entre los residuos de los distintos parámetros físicos, haciéndo énfasis en el origen
+correlaciones entre los residuos de los distintos parámetros físicos, haciendo énfasis en el origen
 de estas: ¿serán introducidas por el método de síntesis espectral ($\epsilon_\text{met}$)? o ¿tienen
 más bien un origen físico ($\epsilon_\text{teo}$)?.
 
@@ -489,8 +489,7 @@ este estudio). En ese sentido, se cuantificarán dichas diferencias definiendo l
 \dig{x} \equiv x^{\text{HR}^*} - x^\text{G05},
 \end{equation}
 %
-que a diferencia de $\dis{x}$, esta contiene los sistemáticos de ambos métodos de síntesis
-espectral.
+que a diferencia de $\dis{x}$, contiene los sistemáticos de ambos métodos de síntesis espectral.
 
 Para estudiar el desempeño del conjunto de datos de RM (fotometría de banda angosta de J-PAS), se
 compararán sus resultados derivados usando \dynbas con los mismos derivados a partir de la
