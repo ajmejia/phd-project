@@ -46,12 +46,13 @@ biblioteca llamada \emph{Synthetic Spectral Atlas of Galaxies} (SSAG) para proba
 implementaciones del método de la síntesis espectral. En el presente trabajo se utilizará la misma
 muestra de $134$ HFEs usadas en \citet{Magris2015}.
 
-Los espectros de la SSAG, por construcción, tienen una resolución $\Delta\lambda=\unit[1]{\AA}$.
-Entonces, a partir de estos espectros se sintetizarán la espectroscopía del SDSS caracterizada por
-una Resolución Alta \citep[RA: $\Delta\lambda=1\,\text{\AA}$][]{Strauss2002}, y la fotometría del
-J-PAS de Resolución Media \citep[RM: $\Delta\lambda=140\,\text{\AA}$][]{Marin-Franch2015} y la
-fotometría del SDSS de Resolución Baja \citep[RB: $\Delta\lambda\sim1000\,{\AA}$][]{Doi2010}, ambas
-usando la integral del flujo esperado en la $k$-ésima banda espectral:
+Los espectros de la SSAG, por construcción, tienen un muestreo espectral
+$\Delta\lambda=\unit[1]{\AA}$. Entonces, a partir de estos espectros se sintetizarán la
+espectroscopía del SDSS caracterizada por una Resolución Alta \citep[RA:
+$\Delta\lambda=1\,\text{\AA}$][]{Strauss2002}, y la fotometría del J-PAS de Resolución Media
+\citep[RM: $\Delta\lambda=140\,\text{\AA}$][]{Marin-Franch2015} y la fotometría del SDSS de
+Resolución Baja \citep[RB: $\Delta\lambda\sim1000\,{\AA}$][]{Doi2010}, ambas usando la integral del
+flujo esperado en la $k$-ésima banda espectral:
 %
 \begin{equation}\label{ec:flujo-esperado}
 F_k = \left.\int T_k(\lambda)\,f_\lambda\,\text{d}\lambda\middle/\int T_k(\lambda)\,\text{d}\lambda\right.,
@@ -110,8 +111,8 @@ como la edad y la metalicidad \citep[\eg,][]{Magris2015}.
 del radio Petrosiano al $\unit[90]{por ciento}$ de la luz ($\unit[1.5]{arcseg}/R_{90}$) como función
 del corrimiento al rojo cosmológico para la muestra de galaxias observadas (\cf,
 \S\ref{sc:obs-sample}). \emph{(b)} La distribución marginal correspondiente al eje de las ordenadas
-y, \emph{(c)} la correspondiente al eje de las obcisas \emph{(negro)}. \emph{(d)} El diagrama
-$g-r\,$---$\,u-g$ para la muestra observada \emph{(negro)} con los correspondientes contornos de
+y, \emph{(c)} la correspondiente al eje de las abscisas \emph{(negro)}. \emph{(d)} El diagrama $g-r$
+\emph{versus} $u-g$ para la muestra observada \emph{(negro)} con los correspondientes contornos de
 confiabilidad a $1$, $2$ y $3\,\sigma$. En el mismo plano se muestran la Submuestra de Garching
 (SMG; \emph{azul claro}) y la muestra de galaxias sintéticas \emph{(azul oscuro)}. El separador
 entre GFE y GPa también se muestra \emph{(línea a trazos)}.}
@@ -134,13 +135,13 @@ Para facilitar el análisis en términos del contenido estelar (población vieja
 muestra resultante se dividirá en Galaxias con Formación Estelar (GFE, $u-r<\unit[2.22]{mag}$) y en
 Galaxias Pasivas (GPa, $u-r\geq\unit[2.22]{mag}$) de acuerdo con \citet{Strateva2001}. En la
 Fig.~\ref{fig:samples}\textit{d} se muestra en la región en escala de grises el mapa de densidad de
-la muestra observada en el plano $g-r$ versus $u-g$, los contornos representan las regiones de
-confianza de $1$, $2$ y $3\sigma$. Un subconjunto de galaxias de la muestra observada
-fue estudiado por \citet{Gallazzi2005}. Para anclar los resultados presentados en este trabajo con
-los disponibles en la literatura, se usará los resultados de \citet{Gallazzi2005} para este
-subconjunto el cual será referido en adelante como Submuestra de Garching (SMG)\footnote{disponible
-en la red en \url{http://www.mpa-garching.mpg.de/SDSS/}.}. En la Fig.~\ref{fig:samples} la SMG es
-representada en azul claro.
+la muestra observada en el plano $g-r$ \emph{versus} $u-g$, los contornos representan las regiones
+de confianza de $1$, $2$ y $3\sigma$. Un subconjunto de galaxias de la muestra observada fue
+estudiado por \citet{Gallazzi2005}. Para anclar los resultados presentados en este trabajo con los
+disponibles en la literatura, se usará los resultados de \citet{Gallazzi2005} para este subconjunto
+el cual será referido en adelante como Submuestra de Garching (SMG)\footnote{disponible en la red en
+\url{http://www.mpa-garching.mpg.de/SDSS/}.}. En la Fig.~\ref{fig:samples} la SMG es representada en
+azul claro.
 
 Ya que los datos fotométricos del J-PAS no existen aún, para probar la consistencia entre los
 parámetros derivados a partir de la espectroscopía de RA y los derivados a partir de la fotometría
