@@ -46,11 +46,11 @@ biblioteca llamada \emph{Synthetic Spectral Atlas of Galaxies} (SSAG) para proba
 implementaciones del método de la síntesis espectral. En el presente trabajo se utilizará la misma
 muestra de $134$ HFEs usadas en \citet{Magris2015}.
 
-Los espectros de la SSAG, por construcción, tienen un muestreo espectral
-$\Delta\lambda=\unit[1]{\AA}$. Entonces, a partir de estos espectros se sintetizarán la
+Los espectros de la SSAG, por construcción, tienen una resolución espectral
+$\Delta\lambda=\unit[2.5]{\AA}$. Entonces, a partir de estos espectros se sintetizarán la
 espectroscopía del SDSS caracterizada por una Resolución Alta \citep[RA:
-$\Delta\lambda=1\,\text{\AA}$][]{Strauss2002}, y la fotometría del J-PAS de Resolución Media
-\citep[RM: $\Delta\lambda=140\,\text{\AA}$][]{Marin-Franch2015} y la fotometría del SDSS de
+$\Delta\lambda\sim3\,\text{\AA}$][]{Strauss2002}, y la fotometría del J-PAS de Resolución Media
+\citep[RM: $\Delta\lambda=100\,\text{\AA}$][]{Marin-Franch2015} y la fotometría del SDSS de
 Resolución Baja \citep[RB: $\Delta\lambda\sim1000\,{\AA}$][]{Doi2010}, ambas usando la integral del
 flujo esperado en la $k$-ésima banda espectral:
 %
@@ -162,12 +162,12 @@ SDSS.
 
 Los espectrógrafos del SDSS están configurados para cubrir la región espectral
 $3800\,$---$\,\unit[9200]{\AA}$ \citep{Strauss2002}, mientras que la cámara del J-PAS comprenderá el
-rango $\sim3500\,$---$\,\unit[10000]{\AA}$ \citep{Marin-Franch2015}. De manera que alrededor de
-cinco elementos de resolución del J-PAS no estarán presentes. Más aún, aquellas regiones de los
-espectros del SDSS donde más del $10$ por ciento de los pixeles dentro de una banda fotométrica del
-J-PAS hayan sido reportados como píxeles malos, se traducirá en que la banda correspondiente será
-removida del espectro sintetizado. Así que alrededor de $10$ medidas del flujo a la resolución de
-J-PAS serán enmascaradas de los espectros sintetizados. Entonces, de la configuración original de
+rango $\sim3500\,$---$\,\unit[10000]{\AA}$ \citep{Marin-Franch2015}. De manera que la información
+espectral de al menos cinco bandas fotométricas del J-PAS no estará presente. Más aún, aquellas
+regiones de los espectros del SDSS donde más del $10$ por ciento de los pixeles dentro de una banda
+fotométrica hayan sido reportados como píxeles malos, se traducirá en que la banda correspondiente
+será removida del espectro sintetizado. Así que alrededor de $10$ medidas del flujo a la resolución
+de J-PAS serán enmascaradas de los espectros sintetizados. Entonces, de la configuración original de
 $56$ medidas del flujo planeada para J-PAS, solo unas $\sim40$ medidas serían representadas en la
 muestra sintética en el mejor de los casos, \ie, sin tomar en cuenta las regiones enmascaradas para
 remover el efecto de la emisión del gas en el MIE. Por esta razón, para mitigar las consecuencias
@@ -281,7 +281,7 @@ una vieja \citep{CidFernandes2005}.
 
 En este estudio se adoptará una versión actualizada de los modelos de síntesis de poblaciones
 estelares de \defcitetalias{Bruzual2003}, basada en las trayectorias evolutivas de Padova 1994
-\citep{Alongi1993, Bressan1993, Fagotto1994a, Fagotto1994b, Girardi1996} y bibliotecas de atmósferas
+\citep{Alongi1993, Bressan1993, Fagotto1994a, Fagotto1994b, Girardi1996} y bibliotecas de espectros
 estelares actualizadas, denominadas \textsc{xmiless} para indicar el uso de una versión extendida de
 las bibliotecas empíricas \miles{}$+$\stelib \citep{SanchezBlazquez2006, LeBorgne2003}. Se adoptará
 la Función Inicial de Masa (FIM) de \citet{Chabrier2003} y se supondrá universalidad, \ie la FIM no
@@ -339,11 +339,11 @@ $R_V=3.1$ para modelar la DEE de las galaxias en la muestra observada (descrita 
 \subsection{La cinemática estelar}
 
 Si $\sedt[F]{obs}$ representa una observación espectroscópica ($\Delta\lambda\sim\unit[1]{\AA}$), la
-cinemática estelar producirá un efecto notable ($\sim\unit[10]{\AA}$) en las líneas espectrales: la
-rotación de las estrellas alrededor del centro de gravedad de la galaxia proyectada en la línea de
-visión, produce un desplazamiento Doppler en el espectro observado cuyo efecto neto es el
-ensanchamiento de las líneas de emisión/absorción. Para modelar este fenómeno, el conjunto de
-observaciones $\set{\sedt[F]{mod}}$ será convolucionado con un \emph{kernel} Gaussiano,
+cinemática estelar producirá un efecto notable ($\sim\unit[10]{\AA}$) en las líneas espectrales: el
+movimiento de las estrellas alrededor del centro de gravedad de la galaxia proyectado en la línea de
+visión, produce un desplazamiento Doppler en el espectro observado de cada una de las fuentes cuyo
+efecto neto es el ensanchamiento de las líneas de emisión/absorción. Para modelar este fenómeno, el
+conjunto de observaciones $\set{\sedt[F]{mod}}$ será convolucionado con un \emph{kernel} Gaussiano,
 $G(0,\sigma_v)$, donde $\sigma_v$ será la dispersión del campo de velocidades estelares estimada
 para la galaxia. El mejor ajuste de $\sigma_v$ será buscado en el rango plausible
 $0\,$---$\,\unit[400]{km\,s\up{-1}}$ de manera iterativa, ajustando una región angosta de
@@ -423,7 +423,7 @@ mediante el ajuste, \ie,
 
 La distribución de los residuos de la muestra sintética será caracterizada por la
 mediana($\res{x}$), para estimar el \emph{sesgo} respecto del valor real, y por el semi-rango
-percentil $16\,$---$\,84$vo, para estimar la \emph{precisión} del valor estimado, siendo ambos
+percentil $16\,$---$\,84$vo, para estimar la \emph{precisión} del valor estimado, siendo ambas
 medidas la incertidumbre sistemática y aleatoria en los parámetros físicos estimados,
 respectivamente. Nótese que de acuerdo con la definición de precisión anterior, valores crecientes
 son característicos de resultados menos precisos. Es importante notar además que estas estadísticas
@@ -465,11 +465,11 @@ definición de la discrepancia.
 
 La relación entre la edad y la metalicidad medias estelares no es trivial de predecir desde un punto
 de vista teórico, pues el aparante rejuvenecimiento de la población estelar en galaxias con
-formación estelar activa hace que la edad media oscile en función del tiempo. La evolución química,
-por otra parte, produce rasgos prominentes en el espectro óptico, incluso en el emitido por
-poblaciones jóvenes ($t_\star<\unit[1]{Gaño}$), los cuales permiten estimar la metalicidad del
-contenido estelar. Sin embargo, en la litaratura reciente se ha encontrado dicha relación en
-repetidas ocasiones usando distintos métodos y conjuntos $\set{\sedt[F]{obs}}$
+formación estelar activa hace que la edad media varíe en ambos sentidos en función del tiempo. La
+evolución química, por otra parte, produce rasgos prominentes en el espectro óptico, incluso en el
+emitido por poblaciones jóvenes ($t_\star<\unit[1]{Gaño}$), los cuales permiten estimar la
+metalicidad del contenido estelar. Sin embargo, en la litaratura reciente se ha encontrado dicha
+relación en repetidas ocasiones usando distintos métodos y conjuntos $\set{\sedt[F]{obs}}$
 \citep[\eg,][]{Worthey1994, Gallazzi2005, Panter2008}.
 
 En este trabajo se utilizará la Relación Edad-Metalicidad (REM, en adelante) para enmarcar los
