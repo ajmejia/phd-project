@@ -10,7 +10,7 @@ $\set{\sedt[F]{obs}}$ y los procedimientos para el análisis de los resultados.
 \section{Los sondeos relevantes}
 
 Ya que la resolución espectral de las observaciones es una cantidad que varía de un sondeo a otro,
-es un parámetro sensible para evaluar del contenido estelar que se puede extraer de los sondeos de
+es un parámetro sensible para evaluar el contenido estelar que se puede extraer de los sondeos de
 galaxias como función de éste. En ese sentido se ha planteado hacer dicha evaluación a tres
 resoluciones espectrales distintas: fotometría de banda ancha, de banda angosta y espectroscopía de
 alta resolución. Para contextualizar el análisis en el marco de sondeos reales se han escogido el
@@ -44,7 +44,12 @@ Monte Carlo para muestrear el espacio de parámetros de funciones las $\zeta(Z_0
 previamente definidas por los autores. \citet{Magris2015} implementaron esta receta en una
 biblioteca llamada \emph{Synthetic Spectral Atlas of Galaxies} (SSAG) para probar varias
 implementaciones del método de la síntesis espectral. En el presente trabajo se utilizará la misma
-muestra de $134$ HFEs usadas en \citet{Magris2015}.
+muestra de $134$ HFEs usadas por \citet{Magris2015}. Aunque la SSAG por sí misma no proporciona
+distribuciones de índices espectrales realistas, pues los fenómenos físicos que regulan el contenido
+estelar no entran en la simulación, la muestra sintética se ha escogido de manera que la bimodalidad
+en las distribuciones de propiedades observacionales como el color y la discontinuidad de
+$\unit[4000]{\AA}$ estén presentes como en sondeos reales \citep{Strateva2001, Kauffmann2003,
+Baldry2004}.
 
 Los espectros de la SSAG, por construcción, tienen una resolución espectral
 $\Delta\lambda=\unit[2.5]{\AA}$. Entonces, a partir de estos espectros se sintetizarán la
@@ -59,12 +64,7 @@ F_k = \left.\int T_k(\lambda)\,f_\lambda\,\text{d}\lambda\middle/\int T_k(\lambd
 \end{equation}
 %
 donde las funciones de respuesta, $T_k(\lambda)$, de ambos sistemas fotométricos son como se muestra
-en la Fig.~\ref{fig:sigma-spectrum}. Aunque la SSAG por sí misma no proporciona distribuciones de
-índices espectrales realistas, pues los fenómenos físicos que regulan el contenido estelar no entran
-en la simulación, la muestra sintética se ha escogido de manera que la bimodalidad en las
-distribuciones de propiedades observacionales como el color y la discontinuidad de
-$\unit[4000]{\AA}$ estén presentes como en sondeos reales \citep{Strateva2001, Kauffmann2003,
-Baldry2004}.
+en la Fig.~\ref{fig:sigma-spectrum}.
 
 Para simular datos espectrales realistas a las distintas resoluciones espectrales, se procederá como
 sigue: \textit{(i)} se añadirá ruido Gaussiano aleatoriamente al flujo en cada elemento de
@@ -124,9 +124,9 @@ Para construir la muestra observada, se seleccionará un conjunto de $\sim\unit[
 galaxias de las observaciones espectroscópicas del SDSS-DR7 \citep{Abazajian2009}, con las
 siguientes restricciones: \textit{(i)} la relación señal a ruido debe ser $>10$ para minimizar el
 impacto de las degeneraciones en los parámetros físicos recuperados; \textit{(ii)} las galaxias
-deben estar en el universo local, $z\leq0.09$, de manera que los espectros representan observaciones
-en el rango óptico; y \textit{(iii)} el número de pixeles buenos debe ser superior a $3850$.
-Adicionalmente, aquellas regiones del espectro donde se manifiestan las líneas de emisión
+deben estar en el universo local, $z\leq0.09$, de manera que los espectros en reposo representan
+observaciones en el rango óptico; y \textit{(iii)} el número de pixeles buenos debe ser superior a
+$3850$. Adicionalmente, aquellas regiones del espectro donde se manifiestan las líneas de emisión
 [O\textsc{ii}]$\lambda\lambda3726,3729$, H$\gamma$, H$\beta$,
 [O\textsc{iii}]$\lambda\lambda4959,5007$, He\textsc{i}$\lambda5876$, [O\textsc{i}]$\lambda6300$,
 [N\textsc{ii}]$\lambda\lambda6548,6583$, H$\alpha$, y [S\textsc{ii}]$\lambda\lambda6717,6731$ serán
@@ -210,7 +210,8 @@ bajo la suposición generalmente plausible de que las incertidumbres en los dato
 están correlacionadas entre sí, es simplemente:
 %
 \begin{equation}\label{ec:likelihood}
-\lik{\sedt[F]{obs}}{\hip} = \prod_{\lambda}^{\Ni{\lambda}}\frac{1}{\sqrt{2\pi{\sigma_\lambda}^2}}\exp{\left\{-\frac{\left[\sedt[F]{obs}-\sedt[F]{mod}(\hip)\right]^2}{2{\sigma_\lambda}^2}\right\}}
+\lik{\sedt[F]{obs}}{\hip} = \prod_{\lambda}^{\Ni{\lambda}}\frac{1}{\sqrt{2\pi{\sigma_\lambda}^2}}
+\exp{\left\{-\frac{\left[\sedt[F]{obs}-\sedt[F]{mod}(\hip)\right]^2}{2{\sigma_\lambda}^2}\right\}}
 \end{equation}
 %
 donde $\sigma_\lambda$ es la desviación estándar en las medidas $\sedt[F]{obs}$. Este problema es
@@ -220,7 +221,8 @@ $\lik{\sedt[F]{obs}}{\hhi}$ es máxima o, equivalentemente, encontrar el mínimo
 mérito
 %
 \begin{equation}\label{ec:chi-square}
--2\log{\mathcal{L}}+\text{const}\equiv\chi^2(\hip) = \sum_\lambda^{\Ni{\lambda}}\frac{\left[\sedt[F]{obs}-\sedt[F]{mod}(\hip)\right]^2}{{\sigma_\lambda}^2}.
+-2\log{\mathcal{L}}+\text{const}\equiv\chi^2(\hip) = \sum_\lambda^{\Ni{\lambda}}
+\frac{\left[\sedt[F]{obs}-\sedt[F]{mod}(\hip)\right]^2}{{\sigma_\lambda}^2}.
 \end{equation}
 %
 Además, si el modelo propuesto es de la forma
@@ -235,7 +237,7 @@ extinción por polvo se ya han sido capturados en $\sedi[F]{k}(\hip)$.} entonces
 una función cuadrática del vector de parámetros y el problema se reduce a la resolución de un
 sistema de $\Ni{\lambda}$ ecuaciones lineales con $\Nt{PESs}$ incógnitas.
 
-\subsection{El algoritmo \emph{\dynbas}}
+\subsection{El algoritmo \dynbas}
 
 \emph{Dynamical Basis Selection} \citep[\dynbas;][]{Mateu2009, Mateu2010, Magris2015} es un
 algoritmo no paramétrico de ajuste espectral diseñado para recuperar el contenido estelar de las
@@ -424,7 +426,7 @@ mediante el ajuste, \ie,
 La distribución de los residuos de la muestra sintética será caracterizada por la
 mediana($\res{x}$), para estimar el \emph{sesgo} respecto del valor real, y por el semi-rango
 percentil $16\,$---$\,84$vo, para estimar la \emph{precisión} del valor estimado, siendo ambas
-medidas la incertidumbre sistemática y aleatoria en los parámetros físicos estimados,
+medidas de la incertidumbre sistemática y aleatoria en los parámetros físicos estimados,
 respectivamente. Nótese que de acuerdo con la definición de precisión anterior, valores crecientes
 son característicos de resultados menos precisos. Es importante notar además que estas estadísticas
 representan límites inferiores para las incertidumbres, dado que los resultados de la síntesis
